@@ -69,14 +69,18 @@
 (10) & $\neg \neg \phi \rightarrow \phi$
 \end{tabular}
 
-Докажите (допустимо применять теорему о дедукции: $\Gamma, \alpha \vdash \beta$ тогда и только тогда, 
-когда $\Gamma \vdash \alpha \rightarrow \beta$):
+Докажите:
 \begin{enumerate}
 \item $\vdash A \rightarrow A$
 \item $\vdash (A \rightarrow A \rightarrow B) \rightarrow (A \rightarrow B)$
 \item $\vdash A \with B \rightarrow B \with A$
 \item $\vdash A \rightarrow \neg A \rightarrow B$
 \item $\vdash A \rightarrow \neg \neg A$
+\end{enumerate}
+
+\item Известна теорема о дедукции: $\Gamma, \alpha \vdash \beta$ тогда и только тогда, 
+когда $\Gamma \vdash \alpha \rightarrow \beta$. Докажите с её использованием:
+\begin{enumerate}
 \item $\neg A, B \vdash \neg(A\& B)$
 \item $A,\neg B \vdash \neg( A\& B)$
 \item $\neg A,\neg B \vdash \neg( A\& B)$
