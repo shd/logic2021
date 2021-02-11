@@ -1,0 +1,93 @@
+\documentclass[10pt,a4paper,oneside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{stmaryrd}
+\usepackage{cmll}
+\usepackage{mathrsfs}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+\usepackage{proof}
+\usepackage{tikz}
+\usepackage{multicol}
+
+\makeatletter
+\newcommand{\dotminus}{\mathbin{\text{\@dotminus}}}
+
+\newcommand{\@dotminus}{%
+  \ooalign{\hidewidth\raise1ex\hbox{.}\hidewidth\cr$\m@th-$\cr}%
+}
+\makeatother
+
+\usetikzlibrary{arrows,backgrounds,patterns,matrix,shapes,fit,calc,shadows,plotmarks}
+
+\newtheorem{definition}{Определение}
+\begin{document}
+
+\begin{center}{\Large\textsc{\textbf{Теоретические (``малые'') домашние задания}}}\\
+             \it Математическая логика, ИТМО, М3235-М3239, весна 2021 года\end{center}
+
+\section*{Задание №1: <<знакомство с исчислением высказываний>>}
+
+В рамках данного задания мы рассматриваем классическое исчисление высказываний с классическим
+множеством истинностных значений $\{\text{И}, \text{Л}\}$.
+
+\begin{enumerate}
+
+\item Будем говорить, что высказывание общезначимо, если выполнено при любой оценке.
+    Высказывание выполнимо, если существует оценка, при которой оно истинно.
+    Высказывание опровержимо, если существует оценка, при которой оно ложно.
+    Высказывание невыполнимо, если нет оценки, при которой оно истинно.
+     Укажите про каждое из следующих высказываний, общезначимо, выполнимо, опровержимо или невыполнимо ли оно:
+\begin{enumerate}
+\item $\neg A\vee\neg\neg A$
+\item $(A\rightarrow\neg B)\vee(B\rightarrow\neg C)\vee(C\rightarrow\neg A)$
+\item $(((P\rightarrow Q)\rightarrow P)\rightarrow P)$
+\item $\neg A \with \neg \neg A$
+\item $\neg (A \with \neg A)$
+\item $A$
+\item $A \rightarrow A$
+\item $A \rightarrow \neg A$
+\item $(A \rightarrow B) \vee (B \rightarrow A)$
+\end{enumerate}
+
+\item Простые доказательства. Рассмотрим доказательства в классическом исчислении
+высказываний, здесь используются следующие десять схем аксиом:
+
+\begin{tabular}{ll}
+(1) & $\phi \rightarrow (\psi \rightarrow \phi)$ \\
+(2) & $(\phi \rightarrow \psi) \rightarrow (\phi \rightarrow \psi \rightarrow \pi) \rightarrow (\phi \rightarrow \pi)$ \\
+(3) & $\phi \rightarrow \psi \rightarrow \phi \with \psi$\\
+(4) & $\phi \with \psi \rightarrow \phi$\\
+(5) & $\phi \with \psi \rightarrow \psi$\\
+(6) & $\phi \rightarrow \phi \vee \psi$\\
+(7) & $\psi \rightarrow \phi \vee \psi$\\
+(8) & $(\phi \rightarrow \pi) \rightarrow (\psi \rightarrow \pi) \rightarrow (\phi \vee \psi \rightarrow \pi)$\\
+(9) & $(\phi \rightarrow \psi) \rightarrow (\phi \rightarrow \neg \psi) \rightarrow \neg \phi$\\
+(10) & $\neg \neg \phi \rightarrow \phi$
+\end{tabular}
+
+Докажите (допустимо применять теорему о дедукции: $\Gamma, \alpha \vdash \beta$ тогда и только тогда, 
+когда $\Gamma \vdash \alpha \rightarrow \beta$):
+\begin{enumerate}
+\item $\vdash A \rightarrow A$
+\item $\vdash (A \rightarrow A \rightarrow B) \rightarrow (A \rightarrow B)$
+\item $\vdash A \with B \rightarrow B \with A$
+\item $\vdash A \rightarrow \neg A \rightarrow B$
+\item $\vdash A \rightarrow \neg \neg A$
+\item $\neg A, B \vdash \neg(A\& B)$
+\item $A,\neg B \vdash \neg( A\& B)$
+\item $\neg A,\neg B \vdash \neg( A\& B)$
+\item $\neg A,\neg B \vdash \neg( A\vee B)$
+\item $ A,\neg B \vdash \neg( A\rightarrow B)$
+\item $\neg A, B \vdash  A\rightarrow B$
+\item $\neg A,\neg B \vdash  A\rightarrow B$
+\item $\vdash (A \rightarrow B) \rightarrow (B \rightarrow C) \rightarrow (A \rightarrow C)$
+\item $\vdash (A \rightarrow B) \rightarrow (B \rightarrow C) \rightarrow (C \rightarrow A)$
+\item Закон контрапозиции: $\vdash (A \rightarrow B) \rightarrow (\neg B \rightarrow \neg A)$
+\end{enumerate}
+
+\end{enumerate}
+\end{document}
