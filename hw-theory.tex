@@ -29,7 +29,7 @@
 \begin{center}{\Large\textsc{\textbf{Теоретические (``малые'') домашние задания}}}\\
              \it Математическая логика, ИТМО, М3235-М3239, весна 2021 года\end{center}
 
-\section*{Задание №1: <<знакомство с исчислением высказываний>>}
+\section*{Задание №1. Знакомство с исчислением высказываний.}
 
 В рамках данного задания мы рассматриваем классическое исчисление высказываний с классическим
 множеством истинностных значений $\{\text{И}, \text{Л}\}$.
@@ -109,6 +109,92 @@ $\vdash\alpha\rightarrow\gamma$ и $\vdash\gamma\rightarrow\beta$, причём 
 $\beta\not\equiv\gamma$.
 
 \item Покажите, что если $\alpha \vdash \beta$ и $\neg\alpha\vdash\beta$, то $\vdash\beta$.
+\end{enumerate}
+
+\section*{Задание №2. Теоремы о полноте и корректности классической логики, интуиционистская логика.}
+
+\begin{enumerate}
+\item Покажите, что если $\Gamma \vdash \alpha$, то $\Gamma \models \alpha$.
+
+\item Покажите, что если $\Gamma \models \alpha$, то $\Gamma \vdash \alpha$.
+
+\item \emph{О законе исключённого третьего.} Покажите, что в интуиционистском исчислении высказываний 
+доказуемо следующее:
+
+\begin{enumerate}
+\item $((A\rightarrow B)\rightarrow A)\rightarrow A \vdash \neg\neg A \rightarrow A$
+\item $A \vee \neg A \vdash \neg\neg A \rightarrow A$
+\end{enumerate}
+
+\item Предложим следующий способ оценки интуиционистских высказываний.
+Фиксируем некоторое топологическое пространство с носителем $X$ и топологией
+(множеством всех открытых множеств) $\Omega\subseteq X$.
+Множеством истинностных значений выберем $\Omega$.
+Соответственно, функция оценок для переменных задаётся как $f_\mathcal{P}: \mathcal{P}\rightarrow\Omega$. 
+Определим функции оценок для связок так:
+$$\begin{array}{rcl}
+f_\rightarrow(a,b) &:=& ((X\setminus a) \cup b)^\circ\\
+f_\with(a,b) &:=& a \cap b\\
+f_\vee(a,b) &:=& a \cup b\\
+f_\neg(a) &:=& (X \setminus a)^\circ
+\end{array}$$
+Будем считать высказывание истинным, если его оценка --- всё пространство $X$.
+Например, при $X = \mathbb{R}$ и $A := (0,\infty), B := (-\infty,1)$ высказывание $A\vee B$
+истинно, но при $A := (0,\infty), B := (-\infty,0)$ оно ложно.
+
+Известно, что интуиционистское исчисление высказываний корректно и полно при таком способе
+оценки --- в частности это значит, что если формула $\alpha$ недоказуема, 
+то найдётся такое топологическое пространство $X$
+и такие оценки для пропозициональных переменных, что $\llbracket\alpha\rrbracket \neq X$.
+Это позволяет показывать недоказуемость высказываний. Например, $\not\vdash A \vee \neg A$:
+возьмём $X = \mathbb{R}$ и $A := (0,\infty)$. Тогда $\llbracket \neg A \rrbracket = (-\infty,0)$
+и $\llbracket A \vee \neg A\rrbracket = \mathbb{R}\setminus\{0\} \ne \mathbb{R}$.
+
+Предложите топологические пространства и оценку для пропозициональных переменных,
+опровергающие следующие выскзывания:
+
+\begin{enumerate}
+\item $\neg A \vee \neg\neg A $
+\item $(((A \rightarrow B) \rightarrow A) \rightarrow A)$
+\item $\neg\neg A \rightarrow A$
+\item $(A \rightarrow (B \vee \neg B)) \vee (\neg A \rightarrow (B \vee \neg B))$
+\item $(A \rightarrow B) \vee (B \rightarrow C) \vee (C \rightarrow A)$
+\end{enumerate}
+
+\item Можно ли, имея $(A \rightarrow B) \vee (B \rightarrow C) \vee (C \rightarrow A)$, доказать
+закон исключённого третьего в интуиционистской логике?
+
+\item Известно, что в классической логике любая связка может быть \emph{выражена} как композиция 
+конъюнкций и отрицаний: существует схема высказываний, использующая только конъюнкции и отрицания, 
+задающая высказывание, логически эквивалентное исходной связке. 
+Например, для импликации можно взять $\neg(\alpha\with\neg\beta)$, ведь 
+$\alpha\rightarrow\beta\vdash\neg(\alpha\with\neg\beta)$ и $\neg(\alpha\with\neg\beta)\vdash\alpha\rightarrow\beta$. 
+Возможно ли в интуиционистской логике выразить через остальные связки:
+\begin{enumerate}
+\item конъюнкцию?
+\item дизъюнкцию?
+\item импликацию?
+\item отрицание?
+\end{enumerate}
+Если да, предложите формулу и два вывода. Если нет --- докажите это.
+
+\item Назовём теорию \emph{противоречивой}, если в ней найдётся такое $\alpha$, что $\vdash\alpha$ и $\vdash\neg\alpha$.
+Покажите, что исчисление высказываний противоречиво тогда и только тогда, когда в нём доказуема любая формула. 
+Доказательство должно быть корректным как для классического, так и для интуиционистского исчислений.
+
+\item \emph{Теорема Гливенко.} Обозначим доказуемость высказывания $\alpha$ в классической логике 
+как $\vdash_\text{к}\alpha$, а в интуиционистской --- как $\vdash_\text{и}\alpha$. 
+Оказывается возможным показать, что какое бы ни было $\alpha$, если $\vdash_\text{к}\alpha$, 
+то $\vdash_\text{и}\neg\neg\alpha$. А именно, покажите, что:
+
+\begin{enumerate}
+\item Если $\alpha$ --- аксиома, полученная из схем 1--9 исчисления высказываний, то $\vdash_\text{и}\neg\neg\alpha$.
+\item $\vdash_\text{и}\neg\neg(\neg\neg\alpha\rightarrow\alpha)$
+\item $\neg\neg\alpha,\neg\neg(\alpha\rightarrow\beta) \vdash_\text{и}\neg\neg\beta$
+\item Докажите утверждение теоремы ($\vdash_\text{к}\alpha$ влечёт $\vdash_\text{и}\neg\neg\alpha$),
+опираясь на предыдущие пункты, и покажите, что классическое исчисление высказываний противоречиво
+тогда и только тогда, когда противоречиво интуиционистское.
+\end{enumerate}
 
 \end{enumerate}
 \end{document}
