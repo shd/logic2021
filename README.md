@@ -36,3 +36,18 @@ https://www.mccme.ru/free-books/shen/shen-logic-part2-2.pdf
 + Morten Heine B. Sørensen, Pawel Urzyczyn: Lections on the Curry-Howard Isomorphism
 https://disi.unitn.it/~bernardi/RSISE11/Papers/curry-howard.pdf
 + В.Е.Плиско, В.Х.Хаханян, Интуиционистская логика, Мех-Мат МГУ 2009 (http://lpcs.math.msu.su/~plisko/intlog.pdf)
+
+## Лекция 3
+### Варианты и модели интуиционистского исчисления высказываний.
++ Натуральный вывод. Аксиоматика ИИВ и натуральный вывод.
++ Решётки. 
++ Импликация. Дистрибутивные и импликативные решётки.
++ Алгебра Гейтинга и булева алгебра.
++ Топология. Топология как алгебра Гейтинга.
+### Где почитать
++ Н.К. Верещагин, А. Шень. Лекции по математической логике и теории алгоритмов. Языки и исчисления.
+https://www.mccme.ru/free-books/shen/shen-logic-part2-2.pdf
++ Конспекты 2011 и 2018 года по логике.
++ Morten Heine B. Sørensen, Pawel Urzyczyn: Lections on the Curry-Howard Isomorphism
+https://disi.unitn.it/~bernardi/RSISE11/Papers/curry-howard.pdf
++ В.Е.Плиско, В.Х.Хаханян, Интуиционистская логика, Мех-Мат МГУ 2009 (http://lpcs.math.msu.su/~plisko/intlog.pdf)
