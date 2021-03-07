@@ -289,4 +289,87 @@ $\alpha\vdash\beta$ и $\beta\vdash\alpha$). \emph{Подсказка:} восп
 \end{enumerate}
 
 \end{enumerate}
+
+\section*{Задание №4. Модели Крипке, нетабличность и дизъюнктивность ИИВ.}
+
+\begin{enumerate}
+\item Рассмотрим табличную модель $\mathfrak{V}$ с $n$ истинностными значениями, 
+и с выделенным значением $T$ для истины.
+Покажите, что $$\models\bigvee_{1 \le i\ne j \le n+1} (P_i \rightarrow P_j)\with(P_j\rightarrow P_i)$$
+В частности, покажите, что в любой корректной модели если $\llbracket\alpha\rrbracket = \llbracket\beta\rrbracket$, то
+$\llbracket\alpha\rightarrow\beta\rrbracket = T$; если $\llbracket\gamma\rrbracket = \llbracket\delta\rrbracket = T$, то
+$\llbracket\gamma\with\delta\rrbracket = T$;
+если $\llbracket\gamma\rrbracket = T$, то $\llbracket\gamma\vee\eta\rrbracket = \llbracket\eta\vee\gamma\rrbracket = T$.
+
+\item Покажите, что какая бы ни была формула $\alpha$ и модель Крипке,
+если $W_i \Vdash \alpha$ и $W_i \preceq W_j$, то $W_j \Vdash \alpha$.
+
+\item Общезначимы ли следующие высказывания в ИИВ? Опровергните, построив модель Крипке, или докажите, построив натуральный вывод. 
+\begin{enumerate}
+\item $P \vee \neg P$;
+\item $\neg\neg P \rightarrow P$;
+\item $P \vee \neg P \vee \neg\neg P \vee \neg\neg\neg P$;
+\item $((P \rightarrow Q) \rightarrow P) \rightarrow P$;
+\item $(A \rightarrow B) \vee (B \rightarrow C) \vee (C \rightarrow A)$;
+\item $\neg(\neg A \with \neg B) \rightarrow A \vee B$;
+\item $(\neg A \vee B) \rightarrow (A \rightarrow B)$;
+\item $(A \rightarrow B) \rightarrow (\neg A \vee B)$;
+\item $\neg\bot$.
+\end{enumerate}
+
+\item Рассмотрим некоторую модель Крипке $\langle\mathfrak{W},\preceq,\Vdash\rangle$. 
+Пусть $\Omega = \{ \mathcal{W} \subseteq \mathfrak{W}\ |\ \text{если }W_i \in \mathcal{W}\text{ и }W_i \preceq W_j\text{, то } W_j \in \mathcal{W}\}$.
+Пусть $\mathcal{W}_\alpha := \{ W_i \in \mathfrak{W}\ |\ W_i \Vdash \alpha \}$ (множество миров, где вынуждена формула $\alpha$).
+\begin{enumerate}
+\item На лекции формулировалась теорема без доказательства, что пара $\langle\mathfrak{W}, \Omega\rangle$ --- топологическое пространство. Докажите её.
+\item Пусть $\mathcal{W}_\alpha$ и $\mathcal{W}_\beta$ --- открытые множества. Выразите $\mathcal{W}_{\alpha\with\beta}$ и $\mathcal{W}_{\alpha\vee\beta}$
+через $\mathcal{W}_\alpha$ и $\mathcal{W}_\beta$ и покажите, что они также открыты.
+\item Пусть $\mathcal{W}_\alpha$ и $\mathcal{W}_\beta$ --- открытые множества. Выразите $\mathcal{W}_{\alpha\rightarrow\beta}$ через 
+них и покажите, что оно также открыто.
+\item Покажите, что $\Omega$ --- в точности множество всех множеств миров, на которых может быть вынуждена какая-либо формула.
+А именно, покажите, что для любой формулы $\alpha$ множество миров $\mathcal{W}_\alpha$, где она вынуждена, всегда открыто 
+($\mathcal{W}_\alpha \in \Omega$) --- и что для любого открытого множества найдётся формула, которая вынуждена ровно на нём
+(для $Q \in \Omega$ существует формула $\alpha$, что $\mathcal{W}_\alpha = Q$).
+\end{enumerate}
+
+\item Постройте топологическое пространство, соответствующее (в смысле предыдущего задания) модели Крипке, опровергающей
+высказывание $\neg\neg P\rightarrow P$.
+Постройте соответствующую ему табличную модель.
+      
+\item Назовём \emph{древовидной} моделью Крипке модель, в которой множество 
+миров $\mathfrak{W}$ упорядочено как дерево: (a) существует наименьший мир 
+$W_0$; (b) для любого $W_i \ne W_0$ существует единственный предшествующий мир
+$W_k: W_k \prec W_i$.
+\begin{enumerate}
+\item Докажите, что любое высказывание, опровергаемое моделью Крипке, может 
+быть опровергнуто древовидной моделью Крипке.
+\item Найдите высказывание, которое не может быть опровергнуто древовидной моделью Крипке
+высотой менее 2.
+\item Покажите, что для любого натурального $n$ найдётся опровержимое в моделях Крипке высказывание,
+неопровергаемое никакой моделью с $n$ мирами.
+\end{enumerate}
+
+\item Будем говорить, что топологическое пространство $\langle X, \Omega\rangle$ \emph{связно}, если нет таких 
+открытых множеств $A$ и $B$, что $X = A \cup B$, но $A \cap B = \varnothing$. Пусть задана некоторая модель Крипке.
+Докажите, что соответствующее модели Крипке топологическое пространство связно тогда и только тогда, когда её граф 
+миров связен в смысле теории графов.
+
+\item Покажите, что модель Крипке с единственным миром задаёт классическую модель (в ней выполнены
+все доказуемые в КИВ высказывания).
+
+\item Пусть заданы алгебры Гейтинга $\mathcal{A},\mathcal{B}$, гомоморфизм $\varphi: \mathcal{A} \rightarrow \mathcal{B}$
+и согласованные оценки $\llbracket\rrbracket_\mathcal{A}$ и $\llbracket\rrbracket_\mathcal{B}$: 
+$\varphi(\llbracket\alpha\rrbracket_\mathcal{A}) = \llbracket\alpha\rrbracket_\mathcal{B}$.
+\begin{enumerate}
+\item Покажите, что гомоморфизм сохраняет порядок: если $a_1\preceq a_2$, то $\varphi(a_1) \preceq \varphi(a_2)$.
+\item Покажите, что если $\llbracket \alpha \rrbracket_\mathcal{A} = 1_\mathcal{A}$, то $\llbracket\alpha\rrbracket_\mathcal{B} = 1_\mathcal{B}$.
+\end{enumerate}
+
+\item Пусть заданы алгебры Гейтинга $\mathcal{A},\mathcal{B}$. Всегда ли можно построить гомоморфизм $\varphi: \mathcal{A}\rightarrow\mathcal{B}$?
+
+\item Пусть $\mathcal{A}$ --- алгебра Гейтинга. Покажите, что $\Gamma(\mathcal{A})$ --- алгебра Гейтинга и гёделева алгебра.
+
+\item Пусть $\mathcal{A}$ --- булева алгебра. Всегда ли (возможно ли, что) $\Gamma(\mathcal{A})$ будет булевой алгеброй?
+\end{enumerate}
+
 \end{document}

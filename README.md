@@ -51,3 +51,12 @@ https://www.mccme.ru/free-books/shen/shen-logic-part2-2.pdf
 + Morten Heine B. Sørensen, Pawel Urzyczyn: Lections on the Curry-Howard Isomorphism
 https://disi.unitn.it/~bernardi/RSISE11/Papers/curry-howard.pdf
 + В.Е.Плиско, В.Х.Хаханян, Интуиционистская логика, Мех-Мат МГУ 2009 (http://lpcs.math.msu.su/~plisko/intlog.pdf)
+
+## Лекция 4
+### Теоремы об интуиционистской логике.
++ Нетабличность интуиционистской логики.
++ Гёделевы алгебры.
++ Дизъюнктивность интуиционистской логики.
+### Где почитать
++ Конспекты 2011 и 2018 года по логике.
++ В.Е.Плиско, В.Х.Хаханян, Интуиционистская логика, Мех-Мат МГУ 2009 (http://lpcs.math.msu.su/~plisko/intlog.pdf)
