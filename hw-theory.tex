@@ -372,4 +372,111 @@ $\varphi(\llbracket\alpha\rrbracket_\mathcal{A}) = \llbracket\alpha\rrbracket_\m
 \item Пусть $\mathcal{A}$ --- булева алгебра. Всегда ли (возможно ли, что) $\Gamma(\mathcal{A})$ будет булевой алгеброй?
 \end{enumerate}
 
+\section*{Задание №5.}
+
+\begin{enumerate}
+\item \emph{Алгебраические типы} --- это семейство составных типов, 
+позволяющих строить <<алгебраические>> выражения на типах:
+
+\begin{tabular}{lll}
+название & обозначение & алгебраический смысл\\\hline
+тип-сумма, <<алгебраический>> & $\alpha\vee\beta$ & $\alpha+\beta$\\
+тип-произведение, пара & $\alpha\with\beta$ & $\alpha\times\beta$\\
+тип-степень, функция & $\alpha\to\beta$&$\beta^\alpha$
+\end{tabular}
+
+Название <<алгебраический>> закрепилось в первую очередь за типом-суммой (видимо потому,
+что остальные типы имеют устоявшиеся названия), однако, может быть отнесено и к другим
+типам.
+
+Поясните <<типовый>> (программистский) смысл следующих алгебраических тождеств --- и постройте
+программы, их доказывающие: $\gamma\times(\alpha+\beta) = \gamma\times\alpha + \gamma\times\beta$,
+$\gamma^{\alpha\times\beta} = {(\gamma^\alpha)}^\beta$ (\emph{карринг}),
+$\gamma^{\alpha+\beta} = \gamma^\alpha\times\gamma^\beta$.
+
+\item Докажите следующие формулы в исчислении предикатов:
+\begin{enumerate}
+\item $\forall x.\phi\rightarrow \phi$
+\item $(\forall x.\phi)\rightarrow (\exists x.\phi)$
+\item $(\forall x.\forall x.\phi) \rightarrow (\forall x.\phi)$
+\item $(\forall x.\phi) \rightarrow (\neg \exists x.\neg \phi)$ 
+\item $(\exists x.\phi) \rightarrow (\neg \forall x.\neg \phi)$
+\item $(\forall x.\neg\phi) \rightarrow (\neg \exists x.\phi)$ 
+\item $(\exists x.\neg\phi) \rightarrow (\neg \forall x.\phi)$
+\end{enumerate}
+
+\item Опровергните формулы $\phi\rightarrow\forall x. \phi$ и $(\exists x.\phi)\rightarrow (\forall x.\phi)$
+
+\item Рассмотрим формулу $\alpha$ с двумя свободными переменными $x$ и $y$ (мы предполагаем,
+что эти метапеременные соответствуют разным переменным).
+Определите, какие из сочетаний кванторов выводятся из каких --- и приведите соответствующие
+доказательства или опровержения:
+\begin{enumerate}
+\item $\forall x.\forall y.\alpha$, $\forall y.\forall x.\alpha$
+\item $\exists x.\exists y.\alpha$, $\exists y.\exists x.\alpha$
+\item $\forall x.\forall y.\alpha$, $\forall x.\exists y.\alpha$, $\exists x.\forall y.\alpha$, $\exists x.\exists y.\alpha$
+\item $\forall x.\exists y.\alpha$, $\exists y.\forall x.\alpha$
+\end{enumerate}
+ 
+\item Научимся выносить квантор всеобщности <<наружу>>:
+\begin{enumerate}
+\item Покажите, что если $x$ не входит свободно в $\alpha$, то
+$$
+\vdash(\alpha \vee \forall x.\beta) \rightarrow (\forall x.\alpha\vee\beta)\quad
+\mbox{и}\quad
+\vdash((\forall x.\beta)\vee\alpha) \rightarrow (\forall x.\beta\vee\alpha)\quad
+$$
+\item Покажите, что $$\vdash((\forall x.\alpha) \vee (\forall y.\beta)) \rightarrow \forall p.\forall q.\alpha[x:=p]\vee\beta[y := q]$$
+где $p$ и $q$ --- свежие переменные, не входящие в формулу. Заметим, что в частном случае $x$ может совпадать с $y$.
+Нужно ли наложить какие-нибудь ещё ограничения на переменные?
+\item Докажите аналогичные утверждения для $\with$.
+\item Как будут сформулированы аналогичные утверждения для $\rightarrow$ и $\neg$? Сформулируйте и докажите их.
+\end{enumerate}
+
+\item Научимся вносить квантор всеобщности <<внутрь>>:
+\begin{enumerate}
+\item Покажите, что если $x$ не входит свободно в $\alpha$, то
+$$
+\vdash (\forall x.\alpha\vee\beta)\rightarrow(\alpha \vee \forall x.\beta)\quad
+\mbox{и}\quad
+\vdash (\forall x.\beta\vee\alpha)\rightarrow((\forall x.\beta)\vee\alpha)\quad
+$$
+
+\item Покажите, что если $p$ не входит свободно в $\beta$ и $q$ не входит свободно в $\alpha$, то
+$$\vdash(\forall p.\forall q.\alpha\vee\beta) \rightarrow (\forall x.\alpha[p := x]) \vee (\forall y.\beta[q := y])$$
+при условии, что $x$ свободно для подстановки вместо $p$ в $\alpha$ и $y$ свободно для подстановки вместо $q$ в $\beta$.
+Нужно ли наложить какие-нибудь ещё ограничения на переменные?
+\item Докажите аналогичные утверждения для $\with$.
+\item Как будут сформулированы аналогичные утверждения для $\rightarrow$ и $\neg$? Сформулируйте и докажите их.
+\end{enumerate}
+
+%\item Сформулируйте и докажите аналогичные предыдущим пунктам утверждения для квантора существования.
+
+\item Научимся работать со спрятанными глубоко кванторами. Пусть $\vdash\alpha\rightarrow\beta$, тогда:
+\begin{enumerate}
+\item Докажите: $$\vdash\psi\vee\alpha \rightarrow \psi\vee\beta\quad\vdash\psi\with\alpha \rightarrow \psi\with\beta\quad
+\vdash(\psi\rightarrow\alpha) \rightarrow (\psi\rightarrow\beta)\quad\vdash(\beta\rightarrow\psi) \rightarrow (\alpha\rightarrow\psi)$$
+\item Сформулируйте и докажите аналогичное свойство для отрицания.
+\item Докажите $\vdash(\forall x.\alpha)\rightarrow(\forall x.\beta)$. 
+Надо ли наложить на формулы $\alpha$ и $\beta$ какие-либо ограничения?
+\item Докажите $\vdash(\exists x.\alpha)\rightarrow(\exists x.\beta)$. 
+Надо ли наложить на формулы $\alpha$ и $\beta$ какие-либо ограничения?
+\end{enumerate}
+
+%\item Формулой исчисления предикатов с \emph{поверхностными} кванторами (формулой в предварённой форме) назовём формулу,
+%соответствующую нетерминалу $\psi$ в грамматике
+%
+%$$\psi ::= \forall x.\psi | \exists x.\psi | \sigma$$
+%
+%где $\sigma$ --- это формула, не содержащая кванторов. Иными словами, это формула, в которой все кванторы снаружи ---
+%квантор не может быть указан внутри конъюнкции, дизъюнкции, импликации или отрицания.
+%
+%Опираясь на доказанные выше леммы, докажите, что
+%если $\alpha$ --- формула, то для неё найдётся такая формула $\beta$ с поверхностными кванторами, что:
+%\begin{enumerate}
+%\item $\vdash\alpha\rightarrow\beta$
+%\item $\vdash\beta\rightarrow\alpha$
+%\end{enumerate}
+\end{enumerate}
+
 \end{document}
