@@ -479,4 +479,59 @@ $$\vdash(\forall p.\forall q.\alpha\vee\beta) \rightarrow (\forall x.\alpha[p :=
 %\end{enumerate}
 \end{enumerate}
 
+\section*{Задание №6.}
+
+\begin{enumerate}
+\item Простые задачи. Каждый пункт --- на 1 балл. Имеется ли свобода для подстановки в следующих примерах?
+\begin{enumerate}
+\item $\forall x.P(x,y) \rightarrow Q(y,x)\ [ x := y ]$
+\item $\forall x.P(x,y)\ [ z := x ]$
+\item $\forall z.(\forall y.P(z)) \rightarrow P(z)\ [ z:= y]$
+\item $(\forall y.(\forall x.P(z))) \vee P(z)\ [ z:= y ]$
+\item $(\forall y.P(a)) \vee P(b)\ [a := y]$
+\end{enumerate}
+
+\item 
+Пусть выполняется замена $x$ на $\theta$ в формуле $\alpha$. 
+
+\begin{enumerate}
+\item
+Докажите, что если свобода для подстановки есть, 
+то $\llbracket \alpha \rrbracket ^{x := \llbracket\theta\rrbracket} = \llbracket\alpha[x := \theta]\rrbracket$.
+
+\item Постройте пример, когда 
+$\llbracket \alpha \rrbracket ^{x := \llbracket\theta\rrbracket} \ne \llbracket\alpha[x := \theta]\rrbracket$.
+\end{enumerate}
+
+\item Будем говорить, что формула $\alpha$ \emph{следует} из контекста $\Gamma$, 
+если при любой оценке, такой, что при всех $\gamma\in\Gamma$ выполнено $\llbracket\gamma\rrbracket = \text{И}$, 
+также выполнено и $\llbracket\alpha\rrbracket=\text{И}$.
+
+Возможно показать, что если $\Gamma \vdash \alpha$, то $\Gamma \models \alpha$, при условии, что в выводе 
+отсутствуют применения правил для кванторов по свободным переменным из контекста.
+Доказательство аналогично таковому для исчисления высказываний, однако, требуется разобрать два новых случая:
+
+\begin{enumerate}
+\item Покажите, что формулы, полученные из 11 и 12 схем аксиом, всегда общезначимы.
+\item Покажите, что формулы, полученные применением правил для кванторов из общезначимых утверждений, также окажутся
+общезначимыми.
+\end{enumerate}
+
+Заметим, что если в выводе присутствуют запрещённые выше применения правил, то получившееся выражение может оказаться некорректным:
+
+\begin{tabular}{lll}
+(1) & $x = 0\vdash x = 0$\\
+(2) & $x = 0\vdash A \rightarrow A \rightarrow A$ \\
+(3) & $x = 0\vdash (x = 0) \rightarrow (A \rightarrow A \rightarrow A) \rightarrow (x=0)$ \\
+(4) & $x = 0\vdash (A \rightarrow A \rightarrow A) \rightarrow (x=0)$\\
+(5) & $x = 0\vdash (A \rightarrow A \rightarrow A) \rightarrow (\forall x.x=0)$ & запрещённое применение правила для $\forall$\\
+(6) & $x = 0\vdash \forall x.x=0$
+\end{tabular}
+
+При этом $x = 0 \models x = 0$, но $x = 0\not\models \forall x.x = 0$.
+
+Почему мы вводим сложные ограничения, а не запретим, например, незамкнутые гипотезы с самого начала? Мы
+не хотим чрезмерно ограничивать язык.
+
+\end{enumerate}
 \end{document}
