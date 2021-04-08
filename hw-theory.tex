@@ -534,4 +534,37 @@ $\llbracket \alpha \rrbracket ^{x := \llbracket\theta\rrbracket} \ne \llbracket\
 не хотим чрезмерно ограничивать язык.
 
 \end{enumerate}
+
+\section*{Задание №7.}
+\begin{enumerate}
+\item Покажите, что связанную переменную под квантором можно переименовывать: $(\forall x.\varphi) \rightarrow \forall y.(\varphi[x := y])$
+и $(\exists x.\varphi) \rightarrow \exists y.(\varphi[x := y])$,
+если $y$ свободен для подстановки вместо $x$ в $\varphi$.
+
+\item Для следующих формул найдите эквивалентные им формулы с поверхностными кванторами и наметьте план доказательства
+эквивалентности (укажите, какие и в каком порядке применять леммы из предыдущего задания).
+\begin{enumerate}
+\item $((\forall x.P(x)) \rightarrow P(x)) \rightarrow P(x)$
+\item $((\forall x.P(x))\rightarrow (\forall x.Q(x)))\rightarrow (\forall x.R(x))$
+\item $(\neg\forall x.P(x)) \vee (\exists y.\forall x.Q(x,y))$
+%\item $\neg\forall x.(\neg \forall y.P(y)) \with (\neg\forall z.Q(z))$
+\end{enumerate}
+
+\item Рассмотрим непротиворечивое множество формул исчисления предикатов $\Gamma$. 
+Рассмотрим оценку формул, определённую на лекции ($D$ --- множество всех строк, составленных из функциональных символов,
+$\llbracket P (\theta_1, \theta_2, \dots, \theta_n) \rrbracket = \text{И}$ тогда и только тогда, когда
+$P (\theta_1, \theta_2, \dots, \theta_n) \in \Gamma$ и т.п.). Пусть для любой формулы $\alpha$ с не более чем $n$ связками
+выполнено, что $\llbracket\alpha\rrbracket = \text{И}$ тогда и только тогда, когда $\alpha\in\Gamma$. Тогда покажите:
+\begin{enumerate}
+\item Пусть $\alpha$ и $\beta$ имеют не более $n$ связок. Тогда 
+$\alpha\with\beta \in \Gamma$ тогда и только тогда, когда $\llbracket \alpha\with\beta \rrbracket = \text{И}$
+\item Пусть $\alpha$ и $\beta$ имеют не более $n$ связок. Тогда 
+$\alpha\vee\beta \in \Gamma$ тогда и только тогда, когда $\llbracket \alpha\vee\beta \rrbracket = \text{И}$
+\item Пусть $\alpha$ и $\beta$ имеют не более $n$ связок. Тогда 
+$\alpha\rightarrow\beta \in \Gamma$ тогда и только тогда, когда $\llbracket \alpha\rightarrow\beta \rrbracket = \text{И}$
+\item Пусть $\alpha$ и $\beta$ имеют не более $n$ связок. Тогда 
+$\neg\alpha \in \Gamma$ тогда и только тогда, когда $\llbracket \neg\alpha \rrbracket = \text{И}$
+\end{enumerate} 
+\end{enumerate}
+
 \end{document}
