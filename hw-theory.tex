@@ -569,7 +569,7 @@ $\neg\alpha \in \Gamma$ тогда и только тогда, когда $\llbr
 одноместный функциональный символ $({}^{-1})$, константу (нульместный функциональный символ) $1$, 
 двуместный предикатный символ $(=)$ и следующие нелогические схемы аксиом: 
 \begin{itemize}
-\item Схемы аксиом равенства: $x = y \with y = z \rightarrow x = z$ (транзитивность); $x = y \rightarrow x\cdot z = y\cdot z$;
+\item Схемы аксиом равенства: $x = y \with x = z \rightarrow y = z$ (транзитивность); $x = y \rightarrow x\cdot z = y\cdot z$;
 $x = y \rightarrow z \cdot x = z \cdot y$ (правое и левое домножение).
 \item Схема аксиом ассоциативности: $x \cdot (y \cdot z) = (x \cdot y) \cdot z$.
 \item Схемы аксиом обратного элемента: $x^{-1} \cdot x = 1$; $x \cdot x^{-1} = 1$.
@@ -578,6 +578,9 @@ $x = y \rightarrow z \cdot x = z \cdot y$ (правое и левое домно
 
 Докажите следующее:
 \begin{enumerate}
+\item $\vdash 1 = 1$
+\item $\vdash \forall a.a = a$
+\item $\vdash \forall a.\forall b.a = b \rightarrow b = a$
 \item $\vdash 1 ^ {-1} = 1$
 \item $\vdash \forall a.(a^{-1})^{-1} = a$
 \item $\vdash \forall a. \forall b. a \cdot b = 1 \rightarrow b = a^{-1}$
