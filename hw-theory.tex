@@ -696,4 +696,40 @@ $\omega$-непро\-ти\-во\-ре\-чивой?
 \item Покажите, что формальная арифметика противоречива тогда и только тогда, когда $\vdash \overline{1} = 0$.
 \end{enumerate}
 
+\section*{Задание 12. Теория множеств}
+\begin{enumerate}
+\item Докажите, что пустое множество единственно.
+\item Определим упорядоченную пару $\langle a,b\rangle := \{\{a\},\{a,b\}\}$. Покажите, что:
+\begin{enumerate}
+\item Упорядоченная пара --- множество.
+\item $\langle a,b \rangle = \langle c,d\rangle$ тогда и только тогда, когда $a = c$ и $b = d$.
+\end{enumerate}
+\item Докажите, что следующие конструкции являются множествами: 
+\begin{enumerate}\item пересечение множеств ($a \cap b$) также является множеством;
+\item пересечение всех элементов множества ($\bigcap a$);
+\item $a\ \setminus\ b$ (разность множеств);
+\item $a \uplus b$ (дизъюнктное объединение множеств);
+\item $a \times b$ (декартово произведение множеств: $\{\langle p,q\rangle\ |\ p\in a, q\in b\}$).
+\end{enumerate}
+\item Определите формулу $\phi(x)$ для свойства <<$x$ --- конечный ординал>>. 
+Покажите с помощью схемы аксиом выделения и аксиомы бесконечности, что ординал $\omega$ определён.
+\item Покажите, что на множестве $\omega$ выполняется аксиоматика Пеано (полная формализация рассуждений не требуется,
+но из изложения должно быть понятно, как эту формализацию в рамках теории первого порядка получить):
+\begin{enumerate}
+\item $\forall x.x \in \omega \rightarrow \neg x' = \varnothing$
+\item $\forall x.\forall y.x \in \omega \with y \in \omega \rightarrow x' = y' \rightarrow x = y$
+\item (\emph{указание к следующему пункту}) покажите, что если $\vdash\forall x.\neg\phi(x)\rightarrow A\with\neg A$, то $\vdash\forall x.\phi(x)$.
+\item Если $\phi(\varnothing)$ и $\forall x.x \in \omega \rightarrow \phi(x) \rightarrow \phi(x')$, 
+то $\forall x.x \in \omega \rightarrow \phi(x)$.
+\end{enumerate}
+\item Проверьте следующие равенства:
+\begin{enumerate}
+\item $\omega\cdot\overline{3} = \overline{3}\cdot\omega$
+\item $\omega\cdot\overline{2} = \omega + \omega$
+\item $(\omega+\overline{1})^{\overline{2}} = \omega^{\overline{2}} + \overline{2}\cdot \omega + \overline{1}$
+\item $\omega ^ \omega = (\omega ^ {\overline{2}}) ^ \omega$
+\item $\omega ^ {\omega + \overline{1}} = \omega ^ \omega + \overline{1}$
+\end{enumerate}
+\end{enumerate}
+
 \end{document}
